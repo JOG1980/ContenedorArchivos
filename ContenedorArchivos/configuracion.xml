@@ -3,9 +3,9 @@
   <graphic_interface>
     <vista>
       <vista_inicial>icons</vista_inicial>
-      <habilitar_mensaje_bienvenida>True</habilitar_mensaje_bienvenida>
+      <habilitar_mensaje_bienvenida>False</habilitar_mensaje_bienvenida>
       <titulo_mensaje_bienvenida>INFORMACIÓN RESERVADA</titulo_mensaje_bienvenida>
-      <mensaje_bienvenida>Los presentes unifilares, así como la documentación que de ellos se genere, se clasifica como RESERVADA por parte del Titular de la Subdirección de Transmisión adscrita a la Dirección de Operación de la Comisión Federal de Electricidad, con fundamento en el Artículo 13 fracción I de la Ley Federal de Transparencia y Acceso a la Información Pública Gubernamental; Artículos 26 fracción I y II, y 30 del Reglamento de la Ley Federal de Transparencia y Acceso a la Información Pública Gubernamental, y artículos Cuarto, Quinto y Décimo Octavo, fracción V, inciso e de los Lineamientos Generales para la Clasificación y Desclasificación de la Información de las Dependencias y Entidades de la Administración Pública Federal.</mensaje_bienvenida>
+      <mensaje_bienvenida>AQUI VA EL MENSAJE INICIAL DE CONTENIDO. sE CAMBIAN EN LA SECCION DE CONFIGURACION CON PERFIL DE ADMINISTRADOR.</mensaje_bienvenida>
     </vista>
     <email>
       <servidor_smtp_ip>smtp_grtc.cfe.gob.mx</servidor_smtp_ip>
