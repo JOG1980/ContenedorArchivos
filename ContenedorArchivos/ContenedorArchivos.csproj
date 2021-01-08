@@ -1,0 +1,886 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FB13F5BD-8E13-4960-894B-305A97C8161D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ContenedorArchivos</RootNamespace>
+    <AssemblyName>ContenedorArchivos</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="configuracion.xml" />
+    <Content Include="Images\IconPack1\16x16\accept.png" />
+    <Content Include="Images\IconPack1\16x16\add.png" />
+    <Content Include="Images\IconPack1\16x16\add2.png" />
+    <Content Include="Images\IconPack1\16x16\add3.png" />
+    <Content Include="Images\IconPack1\16x16\add4.png" />
+    <Content Include="Images\IconPack1\16x16\application.png" />
+    <Content Include="Images\IconPack1\16x16\applications.png" />
+    <Content Include="Images\IconPack1\16x16\application_add.png" />
+    <Content Include="Images\IconPack1\16x16\application_edit.png" />
+    <Content Include="Images\IconPack1\16x16\application_lock.png" />
+    <Content Include="Images\IconPack1\16x16\application_next.png" />
+    <Content Include="Images\IconPack1\16x16\application_remove.png" />
+    <Content Include="Images\IconPack1\16x16\application_up.png" />
+    <Content Include="Images\IconPack1\16x16\archive.png" />
+    <Content Include="Images\IconPack1\16x16\attachment.png" />
+    <Content Include="Images\IconPack1\16x16\back.png" />
+    <Content Include="Images\IconPack1\16x16\blog_post.png" />
+    <Content Include="Images\IconPack1\16x16\blog_post_accept.png" />
+    <Content Include="Images\IconPack1\16x16\blog_post_delete.png" />
+    <Content Include="Images\IconPack1\16x16\blog_post_edit.png" />
+    <Content Include="Images\IconPack1\16x16\calculator.png" />
+    <Content Include="Images\IconPack1\16x16\calculator_accept.png" />
+    <Content Include="Images\IconPack1\16x16\calculator_add.png" />
+    <Content Include="Images\IconPack1\16x16\calculator_remove.png" />
+    <Content Include="Images\IconPack1\16x16\calendar_date.png" />
+    <Content Include="Images\IconPack1\16x16\calendar_empty.png" />
+    <Content Include="Images\IconPack1\16x16\cd.png" />
+    <Content Include="Images\IconPack1\16x16\cd_accept.png" />
+    <Content Include="Images\IconPack1\16x16\cd_add.png" />
+    <Content Include="Images\IconPack1\16x16\cd_down.png" />
+    <Content Include="Images\IconPack1\16x16\cd_remove.png" />
+    <Content Include="Images\IconPack1\16x16\chart.png" />
+    <Content Include="Images\IconPack1\16x16\chart_accept.png" />
+    <Content Include="Images\IconPack1\16x16\chart_add.png" />
+    <Content Include="Images\IconPack1\16x16\chart_remove.png" />
+    <Content Include="Images\IconPack1\16x16\clock.png" />
+    <Content Include="Images\IconPack1\16x16\comment.png" />
+    <Content Include="Images\IconPack1\16x16\comments.png" />
+    <Content Include="Images\IconPack1\16x16\comments_add.png" />
+    <Content Include="Images\IconPack1\16x16\comments_remove.png" />
+    <Content Include="Images\IconPack1\16x16\comment_add.png" />
+    <Content Include="Images\IconPack1\16x16\comment_edit.png" />
+    <Content Include="Images\IconPack1\16x16\comment_remove.png" />
+    <Content Include="Images\IconPack1\16x16\community_users.png" />
+    <Content Include="Images\IconPack1\16x16\computer.png" />
+    <Content Include="Images\IconPack1\16x16\computers.png" />
+    <Content Include="Images\IconPack1\16x16\computer_accept.png" />
+    <Content Include="Images\IconPack1\16x16\computer_remove.png" />
+    <Content Include="Images\IconPack1\16x16\database.png" />
+    <Content Include="Images\IconPack1\16x16\database_accept.png" />
+    <Content Include="Images\IconPack1\16x16\database_add.png" />
+    <Content Include="Images\IconPack1\16x16\database_down.png" />
+    <Content Include="Images\IconPack1\16x16\database_lock.png" />
+    <Content Include="Images\IconPack1\16x16\database_next.png" />
+    <Content Include="Images\IconPack1\16x16\database_previous.png" />
+    <Content Include="Images\IconPack1\16x16\database_process.png" />
+    <Content Include="Images\IconPack1\16x16\database_remove.png" />
+    <Content Include="Images\IconPack1\16x16\database_search.png" />
+    <Content Include="Images\IconPack1\16x16\database_up.png" />
+    <Content Include="Images\IconPack1\16x16\down.png" />
+    <Content Include="Images\IconPack1\16x16\eject.png" />
+    <Content Include="Images\IconPack1\16x16\fast_forward.png" />
+    <Content Include="Images\IconPack1\16x16\favorite.png" />
+    <Content Include="Images\IconPack1\16x16\favorite_add.png" />
+    <Content Include="Images\IconPack1\16x16\favorite_remove.png" />
+    <Content Include="Images\IconPack1\16x16\folder.png" />
+    <Content Include="Images\IconPack1\16x16\folder_accept.png" />
+    <Content Include="Images\IconPack1\16x16\folder_add.png" />
+    <Content Include="Images\IconPack1\16x16\folder_down.png" />
+    <Content Include="Images\IconPack1\16x16\folder_edit.png" />
+    <Content Include="Images\IconPack1\16x16\folder_full.png" />
+    <Content Include="Images\IconPack1\16x16\folder_full_accept.png" />
+    <Content Include="Images\IconPack1\16x16\folder_full_add.png" />
+    <Content Include="Images\IconPack1\16x16\folder_full_delete.png" />
+    <Content Include="Images\IconPack1\16x16\folder_next.png" />
+    <Content Include="Images\IconPack1\16x16\folder_previous.png" />
+    <Content Include="Images\IconPack1\16x16\folder_process.png" />
+    <Content Include="Images\IconPack1\16x16\folder_remove.png" />
+    <Content Include="Images\IconPack1\16x16\folder_up.png" />
+    <Content Include="Images\IconPack1\16x16\forward_new_mail.png" />
+    <Content Include="Images\IconPack1\16x16\help.png" />
+    <Content Include="Images\IconPack1\16x16\home.png" />
+    <Content Include="Images\IconPack1\16x16\home_next.png" />
+    <Content Include="Images\IconPack1\16x16\html_page_accept.png" />
+    <Content Include="Images\IconPack1\16x16\html_page_warning.png" />
+    <Content Include="Images\IconPack1\16x16\icon_btn_generar.png" />
+    <Content Include="Images\IconPack1\16x16\image.png" />
+    <Content Include="Images\IconPack1\16x16\image_add.png" />
+    <Content Include="Images\IconPack1\16x16\image_edit.png" />
+    <Content Include="Images\IconPack1\16x16\image_lock.png" />
+    <Content Include="Images\IconPack1\16x16\image_multi.png" />
+    <Content Include="Images\IconPack1\16x16\image_next.png" />
+    <Content Include="Images\IconPack1\16x16\image_remove.png" />
+    <Content Include="Images\IconPack1\16x16\image_up.png" />
+    <Content Include="Images\IconPack1\16x16\info.png" />
+    <Content Include="Images\IconPack1\16x16\lock.png" />
+    <Content Include="Images\IconPack1\16x16\lock_disabled.png" />
+    <Content Include="Images\IconPack1\16x16\lock_off.png" />
+    <Content Include="Images\IconPack1\16x16\lock_off_disabled.png" />
+    <Content Include="Images\IconPack1\16x16\mail.png" />
+    <Content Include="Images\IconPack1\16x16\mail_accept.png" />
+    <Content Include="Images\IconPack1\16x16\mail_add.png" />
+    <Content Include="Images\IconPack1\16x16\mail_edit.png" />
+    <Content Include="Images\IconPack1\16x16\mail_next.png" />
+    <Content Include="Images\IconPack1\16x16\mail_remove.png" />
+    <Content Include="Images\IconPack1\16x16\movie_track.png" />
+    <Content Include="Images\IconPack1\16x16\movie_track_add.png" />
+    <Content Include="Images\IconPack1\16x16\movie_track_next.png" />
+    <Content Include="Images\IconPack1\16x16\movie_track_remove.png" />
+    <Content Include="Images\IconPack1\16x16\next.png" />
+    <Content Include="Images\IconPack1\16x16\notes_edit.png" />
+    <Content Include="Images\IconPack1\16x16\note_accept.png" />
+    <Content Include="Images\IconPack1\16x16\note_add.png" />
+    <Content Include="Images\IconPack1\16x16\note_edit.png" />
+    <Content Include="Images\IconPack1\16x16\note_remove.png" />
+    <Content Include="Images\IconPack1\16x16\page.png" />
+    <Content Include="Images\IconPack1\16x16\page_accept.png" />
+    <Content Include="Images\IconPack1\16x16\page_add.png" />
+    <Content Include="Images\IconPack1\16x16\page_down.png" />
+    <Content Include="Images\IconPack1\16x16\page_edit.png" />
+    <Content Include="Images\IconPack1\16x16\page_next.png" />
+    <Content Include="Images\IconPack1\16x16\page_previous.png" />
+    <Content Include="Images\IconPack1\16x16\page_process.png" />
+    <Content Include="Images\IconPack1\16x16\page_remove.png" />
+    <Content Include="Images\IconPack1\16x16\page_rename.png" />
+    <Content Include="Images\IconPack1\16x16\page_search.png" />
+    <Content Include="Images\IconPack1\16x16\page_swap.png" />
+    <Content Include="Images\IconPack1\16x16\page_up.png" />
+    <Content Include="Images\IconPack1\16x16\pause.png" />
+    <Content Include="Images\IconPack1\16x16\pdf.png" />
+    <Content Include="Images\IconPack1\16x16\play.png" />
+    <Content Include="Images\IconPack1\16x16\printer.png" />
+    <Content Include="Images\IconPack1\16x16\printer_search.png" />
+    <Content Include="Images\IconPack1\16x16\process.png" />
+    <Content Include="Images\IconPack1\16x16\process_accept.png" />
+    <Content Include="Images\IconPack1\16x16\process_add.png" />
+    <Content Include="Images\IconPack1\16x16\process_remove.png" />
+    <Content Include="Images\IconPack1\16x16\record.png" />
+    <Content Include="Images\IconPack1\16x16\remove.png" />
+    <Content Include="Images\IconPack1\16x16\repeat.png" />
+    <Content Include="Images\IconPack1\16x16\rewind.png" />
+    <Content Include="Images\IconPack1\16x16\rss.png" />
+    <Content Include="Images\IconPack1\16x16\rss_add.png" />
+    <Content Include="Images\IconPack1\16x16\rss_edit.png" />
+    <Content Include="Images\IconPack1\16x16\rss_next.png" />
+    <Content Include="Images\IconPack1\16x16\rss_remove.png" />
+    <Content Include="Images\IconPack1\16x16\search.png" />
+    <Content Include="Images\IconPack1\16x16\search_add.png" />
+    <Content Include="Images\IconPack1\16x16\search_remove.png" />
+    <Content Include="Images\IconPack1\16x16\she_user.png" />
+    <Content Include="Images\IconPack1\16x16\she_users.png" />
+    <Content Include="Images\IconPack1\16x16\she_user_accept.png" />
+    <Content Include="Images\IconPack1\16x16\she_user_add.png" />
+    <Content Include="Images\IconPack1\16x16\she_user_comment.png" />
+    <Content Include="Images\IconPack1\16x16\she_user_remove.png" />
+    <Content Include="Images\IconPack1\16x16\shopping_cart.png" />
+    <Content Include="Images\IconPack1\16x16\shopping_cart_accept.png" />
+    <Content Include="Images\IconPack1\16x16\shopping_cart_down.png" />
+    <Content Include="Images\IconPack1\16x16\shopping_cart_remove.png" />
+    <Content Include="Images\IconPack1\16x16\shopping_cart_up.png" />
+    <Content Include="Images\IconPack1\16x16\skip_backward.png" />
+    <Content Include="Images\IconPack1\16x16\skip_forward.png" />
+    <Content Include="Images\IconPack1\16x16\sound.png" />
+    <Content Include="Images\IconPack1\16x16\sound_off.png" />
+    <Content Include="Images\IconPack1\16x16\sound_on.png" />
+    <Content Include="Images\IconPack1\16x16\stop.png" />
+    <Content Include="Images\IconPack1\16x16\sustr.png" />
+    <Content Include="Images\IconPack1\16x16\sustr2.png" />
+    <Content Include="Images\IconPack1\16x16\up.png" />
+    <Content Include="Images\IconPack1\16x16\user.png" />
+    <Content Include="Images\IconPack1\16x16\users.png" />
+    <Content Include="Images\IconPack1\16x16\user_accept.png" />
+    <Content Include="Images\IconPack1\16x16\user_add.png" />
+    <Content Include="Images\IconPack1\16x16\user_comment.png" />
+    <Content Include="Images\IconPack1\16x16\user_comments.png" />
+    <Content Include="Images\IconPack1\16x16\user_has_new_email.png" />
+    <Content Include="Images\IconPack1\16x16\user_remove.png" />
+    <Content Include="Images\IconPack1\16x16\video_favorite.png" />
+    <Content Include="Images\IconPack1\16x16\warning.png" />
+    <Content Include="Images\IconPack1\16x16\window.png" />
+    <Content Include="Images\IconPack1\16x16\windows.png" />
+    <Content Include="Images\IconPack1\16x16\window_add.png" />
+    <Content Include="Images\IconPack1\16x16\window_edit.png" />
+    <Content Include="Images\IconPack1\16x16\window_lock.png" />
+    <Content Include="Images\IconPack1\16x16\window_next.png" />
+    <Content Include="Images\IconPack1\16x16\window_remove.png" />
+    <Content Include="Images\IconPack1\16x16\window_up.png" />
+    <Content Include="Images\IconPack1\16x16\word.png" />
+    <Content Include="Images\IconPack1\24x24\accept.png" />
+    <Content Include="Images\IconPack1\24x24\add.png" />
+    <Content Include="Images\IconPack1\24x24\add2.png" />
+    <Content Include="Images\IconPack1\24x24\add3.png" />
+    <Content Include="Images\IconPack1\24x24\add4.png" />
+    <Content Include="Images\IconPack1\24x24\application.png" />
+    <Content Include="Images\IconPack1\24x24\applications.png" />
+    <Content Include="Images\IconPack1\24x24\application_add.png" />
+    <Content Include="Images\IconPack1\24x24\application_edit.png" />
+    <Content Include="Images\IconPack1\24x24\application_lock.png" />
+    <Content Include="Images\IconPack1\24x24\application_next.png" />
+    <Content Include="Images\IconPack1\24x24\application_remove.png" />
+    <Content Include="Images\IconPack1\24x24\application_up.png" />
+    <Content Include="Images\IconPack1\24x24\archive.png" />
+    <Content Include="Images\IconPack1\24x24\attachment.png" />
+    <Content Include="Images\IconPack1\24x24\back.png" />
+    <Content Include="Images\IconPack1\24x24\blog_post.png" />
+    <Content Include="Images\IconPack1\24x24\blog_post_accept.png" />
+    <Content Include="Images\IconPack1\24x24\blog_post_delete.png" />
+    <Content Include="Images\IconPack1\24x24\blog_post_edit.png" />
+    <Content Include="Images\IconPack1\24x24\calculator.png" />
+    <Content Include="Images\IconPack1\24x24\calculator_accept.png" />
+    <Content Include="Images\IconPack1\24x24\calculator_add.png" />
+    <Content Include="Images\IconPack1\24x24\calculator_remove.png" />
+    <Content Include="Images\IconPack1\24x24\calendar_date.png" />
+    <Content Include="Images\IconPack1\24x24\calendar_empty.png" />
+    <Content Include="Images\IconPack1\24x24\cd.png" />
+    <Content Include="Images\IconPack1\24x24\cd_accept.png" />
+    <Content Include="Images\IconPack1\24x24\cd_add.png" />
+    <Content Include="Images\IconPack1\24x24\cd_down.png" />
+    <Content Include="Images\IconPack1\24x24\cd_remove.png" />
+    <Content Include="Images\IconPack1\24x24\chart.png" />
+    <Content Include="Images\IconPack1\24x24\chart_accept.png" />
+    <Content Include="Images\IconPack1\24x24\chart_add.png" />
+    <Content Include="Images\IconPack1\24x24\chart_remove.png" />
+    <Content Include="Images\IconPack1\24x24\clock.png" />
+    <Content Include="Images\IconPack1\24x24\comment.png" />
+    <Content Include="Images\IconPack1\24x24\comments.png" />
+    <Content Include="Images\IconPack1\24x24\comments_add.png" />
+    <Content Include="Images\IconPack1\24x24\comments_remove.png" />
+    <Content Include="Images\IconPack1\24x24\comment_add.png" />
+    <Content Include="Images\IconPack1\24x24\comment_edit.png" />
+    <Content Include="Images\IconPack1\24x24\comment_remove.png" />
+    <Content Include="Images\IconPack1\24x24\community_users.png" />
+    <Content Include="Images\IconPack1\24x24\computer.png" />
+    <Content Include="Images\IconPack1\24x24\computers.png" />
+    <Content Include="Images\IconPack1\24x24\computer_accept.png" />
+    <Content Include="Images\IconPack1\24x24\computer_remove.png" />
+    <Content Include="Images\IconPack1\24x24\database.png" />
+    <Content Include="Images\IconPack1\24x24\database_accept.png" />
+    <Content Include="Images\IconPack1\24x24\database_add.png" />
+    <Content Include="Images\IconPack1\24x24\database_down.png" />
+    <Content Include="Images\IconPack1\24x24\database_lock.png" />
+    <Content Include="Images\IconPack1\24x24\database_next.png" />
+    <Content Include="Images\IconPack1\24x24\database_previous.png" />
+    <Content Include="Images\IconPack1\24x24\database_process.png" />
+    <Content Include="Images\IconPack1\24x24\database_remove.png" />
+    <Content Include="Images\IconPack1\24x24\database_search.png" />
+    <Content Include="Images\IconPack1\24x24\database_up.png" />
+    <Content Include="Images\IconPack1\24x24\down.png" />
+    <Content Include="Images\IconPack1\24x24\eject.png" />
+    <Content Include="Images\IconPack1\24x24\fast_forward.png" />
+    <Content Include="Images\IconPack1\24x24\favorite.png" />
+    <Content Include="Images\IconPack1\24x24\favorite_add.png" />
+    <Content Include="Images\IconPack1\24x24\favorite_remove.png" />
+    <Content Include="Images\IconPack1\24x24\folder.png" />
+    <Content Include="Images\IconPack1\24x24\folder_accept.png" />
+    <Content Include="Images\IconPack1\24x24\folder_add.png" />
+    <Content Include="Images\IconPack1\24x24\folder_down.png" />
+    <Content Include="Images\IconPack1\24x24\folder_edit.png" />
+    <Content Include="Images\IconPack1\24x24\folder_full.png" />
+    <Content Include="Images\IconPack1\24x24\folder_full_accept.png" />
+    <Content Include="Images\IconPack1\24x24\folder_full_add.png" />
+    <Content Include="Images\IconPack1\24x24\folder_full_delete.png" />
+    <Content Include="Images\IconPack1\24x24\folder_next.png" />
+    <Content Include="Images\IconPack1\24x24\folder_previous.png" />
+    <Content Include="Images\IconPack1\24x24\folder_process.png" />
+    <Content Include="Images\IconPack1\24x24\folder_remove.png" />
+    <Content Include="Images\IconPack1\24x24\folder_up.png" />
+    <Content Include="Images\IconPack1\24x24\forward_new_mail.png" />
+    <Content Include="Images\IconPack1\24x24\help.png" />
+    <Content Include="Images\IconPack1\24x24\home.png" />
+    <Content Include="Images\IconPack1\24x24\home_next.png" />
+    <Content Include="Images\IconPack1\24x24\html_page_accept.png" />
+    <Content Include="Images\IconPack1\24x24\html_page_warning.png" />
+    <Content Include="Images\IconPack1\24x24\image.png" />
+    <Content Include="Images\IconPack1\24x24\image_add.png" />
+    <Content Include="Images\IconPack1\24x24\image_edit.png" />
+    <Content Include="Images\IconPack1\24x24\image_lock.png" />
+    <Content Include="Images\IconPack1\24x24\image_multi.png" />
+    <Content Include="Images\IconPack1\24x24\image_next.png" />
+    <Content Include="Images\IconPack1\24x24\image_remove.png" />
+    <Content Include="Images\IconPack1\24x24\image_up.png" />
+    <Content Include="Images\IconPack1\24x24\info.png" />
+    <Content Include="Images\IconPack1\24x24\lock.png" />
+    <Content Include="Images\IconPack1\24x24\lock_disabled.png" />
+    <Content Include="Images\IconPack1\24x24\lock_off.png" />
+    <Content Include="Images\IconPack1\24x24\lock_off_disabled.png" />
+    <Content Include="Images\IconPack1\24x24\mail.png" />
+    <Content Include="Images\IconPack1\24x24\mail_accept.png" />
+    <Content Include="Images\IconPack1\24x24\mail_add.png" />
+    <Content Include="Images\IconPack1\24x24\mail_edit.png" />
+    <Content Include="Images\IconPack1\24x24\mail_next.png" />
+    <Content Include="Images\IconPack1\24x24\mail_remove.png" />
+    <Content Include="Images\IconPack1\24x24\movie_track.png" />
+    <Content Include="Images\IconPack1\24x24\movie_track_add.png" />
+    <Content Include="Images\IconPack1\24x24\movie_track_next.png" />
+    <Content Include="Images\IconPack1\24x24\movie_track_remove.png" />
+    <Content Include="Images\IconPack1\24x24\next.png" />
+    <Content Include="Images\IconPack1\24x24\notes_edit.png" />
+    <Content Include="Images\IconPack1\24x24\note_accept.png" />
+    <Content Include="Images\IconPack1\24x24\note_add.png" />
+    <Content Include="Images\IconPack1\24x24\note_edit.png" />
+    <Content Include="Images\IconPack1\24x24\note_remove.png" />
+    <Content Include="Images\IconPack1\24x24\page.png" />
+    <Content Include="Images\IconPack1\24x24\page_accept.png" />
+    <Content Include="Images\IconPack1\24x24\page_add.png" />
+    <Content Include="Images\IconPack1\24x24\page_down.png" />
+    <Content Include="Images\IconPack1\24x24\page_edit.png" />
+    <Content Include="Images\IconPack1\24x24\page_next.png" />
+    <Content Include="Images\IconPack1\24x24\page_previous.png" />
+    <Content Include="Images\IconPack1\24x24\page_process.png" />
+    <Content Include="Images\IconPack1\24x24\page_remove.png" />
+    <Content Include="Images\IconPack1\24x24\page_rename.png" />
+    <Content Include="Images\IconPack1\24x24\page_search.png" />
+    <Content Include="Images\IconPack1\24x24\page_swap.png" />
+    <Content Include="Images\IconPack1\24x24\page_up.png" />
+    <Content Include="Images\IconPack1\24x24\pause.png" />
+    <Content Include="Images\IconPack1\24x24\pdf.png" />
+    <Content Include="Images\IconPack1\24x24\play.png" />
+    <Content Include="Images\IconPack1\24x24\printer.png" />
+    <Content Include="Images\IconPack1\24x24\printer_search.png" />
+    <Content Include="Images\IconPack1\24x24\process.png" />
+    <Content Include="Images\IconPack1\24x24\process_accept.png" />
+    <Content Include="Images\IconPack1\24x24\process_add.png" />
+    <Content Include="Images\IconPack1\24x24\process_remove.png" />
+    <Content Include="Images\IconPack1\24x24\record.png" />
+    <Content Include="Images\IconPack1\24x24\remove.png" />
+    <Content Include="Images\IconPack1\24x24\repeat.png" />
+    <Content Include="Images\IconPack1\24x24\rewind.png" />
+    <Content Include="Images\IconPack1\24x24\rss.png" />
+    <Content Include="Images\IconPack1\24x24\rss_add.png" />
+    <Content Include="Images\IconPack1\24x24\rss_edit.png" />
+    <Content Include="Images\IconPack1\24x24\rss_next.png" />
+    <Content Include="Images\IconPack1\24x24\rss_remove.png" />
+    <Content Include="Images\IconPack1\24x24\search.png" />
+    <Content Include="Images\IconPack1\24x24\search_add.png" />
+    <Content Include="Images\IconPack1\24x24\search_remove.png" />
+    <Content Include="Images\IconPack1\24x24\she_user.png" />
+    <Content Include="Images\IconPack1\24x24\she_users.png" />
+    <Content Include="Images\IconPack1\24x24\she_user_accept.png" />
+    <Content Include="Images\IconPack1\24x24\she_user_add.png" />
+    <Content Include="Images\IconPack1\24x24\she_user_comment.png" />
+    <Content Include="Images\IconPack1\24x24\she_user_remove.png" />
+    <Content Include="Images\IconPack1\24x24\shopping_cart.png" />
+    <Content Include="Images\IconPack1\24x24\shopping_cart_accept.png" />
+    <Content Include="Images\IconPack1\24x24\shopping_cart_down.png" />
+    <Content Include="Images\IconPack1\24x24\shopping_cart_remove.png" />
+    <Content Include="Images\IconPack1\24x24\shopping_cart_up.png" />
+    <Content Include="Images\IconPack1\24x24\skip_backward.png" />
+    <Content Include="Images\IconPack1\24x24\skip_forward.png" />
+    <Content Include="Images\IconPack1\24x24\sound.png" />
+    <Content Include="Images\IconPack1\24x24\sound_off.png" />
+    <Content Include="Images\IconPack1\24x24\sound_on.png" />
+    <Content Include="Images\IconPack1\24x24\stop.png" />
+    <Content Include="Images\IconPack1\24x24\sustr.png" />
+    <Content Include="Images\IconPack1\24x24\sustr2.png" />
+    <Content Include="Images\IconPack1\24x24\up.png" />
+    <Content Include="Images\IconPack1\24x24\user.png" />
+    <Content Include="Images\IconPack1\24x24\users.png" />
+    <Content Include="Images\IconPack1\24x24\user_accept.png" />
+    <Content Include="Images\IconPack1\24x24\user_add.png" />
+    <Content Include="Images\IconPack1\24x24\user_comment.png" />
+    <Content Include="Images\IconPack1\24x24\user_comments.png" />
+    <Content Include="Images\IconPack1\24x24\user_has_new_email.png" />
+    <Content Include="Images\IconPack1\24x24\user_remove.png" />
+    <Content Include="Images\IconPack1\24x24\video_favorite.png" />
+    <Content Include="Images\IconPack1\24x24\warning.png" />
+    <Content Include="Images\IconPack1\24x24\window.png" />
+    <Content Include="Images\IconPack1\24x24\windows.png" />
+    <Content Include="Images\IconPack1\24x24\window_add.png" />
+    <Content Include="Images\IconPack1\24x24\window_edit.png" />
+    <Content Include="Images\IconPack1\24x24\window_lock.png" />
+    <Content Include="Images\IconPack1\24x24\window_next.png" />
+    <Content Include="Images\IconPack1\24x24\window_remove.png" />
+    <Content Include="Images\IconPack1\24x24\window_up.png" />
+    <Content Include="Images\IconPack1\24x24\word.png" />
+    <Content Include="Images\icons\application_view_detail.png" />
+    <Content Include="Images\icons\application_view_icons.png" />
+    <Content Include="Images\icons\flecha_arriba.png" />
+    <Content Include="Images\icons\folders_explorer.png" />
+    <Content Include="Images\icons\folder_add.png" />
+    <Content Include="Images\icons\node-tree.png" />
+    <Content Include="Images\icons_ext\16\file_extension_3gp.png" />
+    <Content Include="Images\icons_ext\16\file_extension_7z.png" />
+    <Content Include="Images\icons_ext\16\file_extension_ace.png" />
+    <Content Include="Images\icons_ext\16\file_extension_ai.png" />
+    <Content Include="Images\icons_ext\16\file_extension_aif.png" />
+    <Content Include="Images\icons_ext\16\file_extension_aiff.png" />
+    <Content Include="Images\icons_ext\16\file_extension_amr.png" />
+    <Content Include="Images\icons_ext\16\file_extension_asf.png" />
+    <Content Include="Images\icons_ext\16\file_extension_asx.png" />
+    <Content Include="Images\icons_ext\16\file_extension_bat.png" />
+    <Content Include="Images\icons_ext\16\file_extension_bin.png" />
+    <Content Include="Images\icons_ext\16\file_extension_bmp.png" />
+    <Content Include="Images\icons_ext\16\file_extension_bup.png" />
+    <Content Include="Images\icons_ext\16\file_extension_cab.png" />
+    <Content Include="Images\icons_ext\16\file_extension_cbr.png" />
+    <Content Include="Images\icons_ext\16\file_extension_cda.png" />
+    <Content Include="Images\icons_ext\16\file_extension_cdl.png" />
+    <Content Include="Images\icons_ext\16\file_extension_cdr.png" />
+    <Content Include="Images\icons_ext\16\file_extension_chm.png" />
+    <Content Include="Images\icons_ext\16\file_extension_dat.png" />
+    <Content Include="Images\icons_ext\16\file_extension_divx.png" />
+    <Content Include="Images\icons_ext\16\file_extension_dll.png" />
+    <Content Include="Images\icons_ext\16\file_extension_dmg.png" />
+    <Content Include="Images\icons_ext\16\file_extension_doc.png" />
+    <Content Include="Images\icons_ext\16\file_extension_dss.png" />
+    <Content Include="Images\icons_ext\16\file_extension_dvf.png" />
+    <Content Include="Images\icons_ext\16\file_extension_dwg.png" />
+    <Content Include="Images\icons_ext\16\file_extension_eml.png" />
+    <Content Include="Images\icons_ext\16\file_extension_eps.png" />
+    <Content Include="Images\icons_ext\16\file_extension_exe.png" />
+    <Content Include="Images\icons_ext\16\file_extension_fla.png" />
+    <Content Include="Images\icons_ext\16\file_extension_flv.png" />
+    <Content Include="Images\icons_ext\16\file_extension_gif.png" />
+    <Content Include="Images\icons_ext\16\file_extension_gz.png" />
+    <Content Include="Images\icons_ext\16\file_extension_hqx.png" />
+    <Content Include="Images\icons_ext\16\file_extension_htm.png" />
+    <Content Include="Images\icons_ext\16\file_extension_html.png" />
+    <Content Include="Images\icons_ext\16\file_extension_ifo.png" />
+    <Content Include="Images\icons_ext\16\file_extension_indd.png" />
+    <Content Include="Images\icons_ext\16\file_extension_iso.png" />
+    <Content Include="Images\icons_ext\16\file_extension_jar.png" />
+    <Content Include="Images\icons_ext\16\file_extension_jpeg.png" />
+    <Content Include="Images\icons_ext\16\file_extension_jpg.png" />
+    <Content Include="Images\icons_ext\16\file_extension_lnk.png" />
+    <Content Include="Images\icons_ext\16\file_extension_log.png" />
+    <Content Include="Images\icons_ext\16\file_extension_m4a.png" />
+    <Content Include="Images\icons_ext\16\file_extension_m4b.png" />
+    <Content Include="Images\icons_ext\16\file_extension_m4p.png" />
+    <Content Include="Images\icons_ext\16\file_extension_m4v.png" />
+    <Content Include="Images\icons_ext\16\file_extension_mcd.png" />
+    <Content Include="Images\icons_ext\16\file_extension_mdb.png" />
+    <Content Include="Images\icons_ext\16\file_extension_mid.png" />
+    <Content Include="Images\icons_ext\16\file_extension_mov.png" />
+    <Content Include="Images\icons_ext\16\file_extension_mp2.png" />
+    <Content Include="Images\icons_ext\16\file_extension_mp3.png" />
+    <Content Include="Images\icons_ext\16\file_extension_mp4.png" />
+    <Content Include="Images\icons_ext\16\file_extension_mpeg.png" />
+    <Content Include="Images\icons_ext\16\file_extension_mpg.png" />
+    <Content Include="Images\icons_ext\16\file_extension_msi.png" />
+    <Content Include="Images\icons_ext\16\file_extension_mswmm.png" />
+    <Content Include="Images\icons_ext\16\file_extension_new.png" />
+    <Content Include="Images\icons_ext\16\file_extension_ogg.png" />
+    <Content Include="Images\icons_ext\16\file_extension_pdf.png" />
+    <Content Include="Images\icons_ext\16\file_extension_png.png" />
+    <Content Include="Images\icons_ext\16\file_extension_pps.png" />
+    <Content Include="Images\icons_ext\16\file_extension_ps.png" />
+    <Content Include="Images\icons_ext\16\file_extension_psd.png" />
+    <Content Include="Images\icons_ext\16\file_extension_pst.png" />
+    <Content Include="Images\icons_ext\16\file_extension_ptb.png" />
+    <Content Include="Images\icons_ext\16\file_extension_pub.png" />
+    <Content Include="Images\icons_ext\16\file_extension_qbb.png" />
+    <Content Include="Images\icons_ext\16\file_extension_qbw.png" />
+    <Content Include="Images\icons_ext\16\file_extension_qxd.png" />
+    <Content Include="Images\icons_ext\16\file_extension_ram.png" />
+    <Content Include="Images\icons_ext\16\file_extension_rar.png" />
+    <Content Include="Images\icons_ext\16\file_extension_rm.png" />
+    <Content Include="Images\icons_ext\16\file_extension_rmvb.png" />
+    <Content Include="Images\icons_ext\16\file_extension_rtf.png" />
+    <Content Include="Images\icons_ext\16\file_extension_sea.png" />
+    <Content Include="Images\icons_ext\16\file_extension_ses.png" />
+    <Content Include="Images\icons_ext\16\file_extension_sit.png" />
+    <Content Include="Images\icons_ext\16\file_extension_sitx.png" />
+    <Content Include="Images\icons_ext\16\file_extension_ss.png" />
+    <Content Include="Images\icons_ext\16\file_extension_swf.png" />
+    <Content Include="Images\icons_ext\16\file_extension_tgz.png" />
+    <Content Include="Images\icons_ext\16\file_extension_thm.png" />
+    <Content Include="Images\icons_ext\16\file_extension_tif.png" />
+    <Content Include="Images\icons_ext\16\file_extension_tmp.png" />
+    <Content Include="Images\icons_ext\16\file_extension_torrent.png" />
+    <Content Include="Images\icons_ext\16\file_extension_ttf.png" />
+    <Content Include="Images\icons_ext\16\file_extension_txt.png" />
+    <Content Include="Images\icons_ext\16\file_extension_vcd.png" />
+    <Content Include="Images\icons_ext\16\file_extension_vob.png" />
+    <Content Include="Images\icons_ext\16\file_extension_wav.png" />
+    <Content Include="Images\icons_ext\16\file_extension_wma.png" />
+    <Content Include="Images\icons_ext\16\file_extension_wmv.png" />
+    <Content Include="Images\icons_ext\16\file_extension_wps.png" />
+    <Content Include="Images\icons_ext\16\file_extension_xls.png" />
+    <Content Include="Images\icons_ext\16\file_extension_xpi.png" />
+    <Content Include="Images\icons_ext\16\file_extension_zip.png" />
+    <Content Include="Images\icons_ext\16\folder_vertical_document.png" />
+    <Content Include="Images\icons_ext\16\folder_vertical_open.png" />
+    <Content Include="Images\icons_ext\32\file_extension_3gp.png" />
+    <Content Include="Images\icons_ext\32\file_extension_7z.png" />
+    <Content Include="Images\icons_ext\32\file_extension_ace.png" />
+    <Content Include="Images\icons_ext\32\file_extension_ai.png" />
+    <Content Include="Images\icons_ext\32\file_extension_aif.png" />
+    <Content Include="Images\icons_ext\32\file_extension_aiff.png" />
+    <Content Include="Images\icons_ext\32\file_extension_amr.png" />
+    <Content Include="Images\icons_ext\32\file_extension_asf.png" />
+    <Content Include="Images\icons_ext\32\file_extension_asx.png" />
+    <Content Include="Images\icons_ext\32\file_extension_bat.png" />
+    <Content Include="Images\icons_ext\32\file_extension_bin.png" />
+    <Content Include="Images\icons_ext\32\file_extension_bmp.png" />
+    <Content Include="Images\icons_ext\32\file_extension_bup.png" />
+    <Content Include="Images\icons_ext\32\file_extension_cab.png" />
+    <Content Include="Images\icons_ext\32\file_extension_cbr.png" />
+    <Content Include="Images\icons_ext\32\file_extension_cda.png" />
+    <Content Include="Images\icons_ext\32\file_extension_cdl.png" />
+    <Content Include="Images\icons_ext\32\file_extension_cdr.png" />
+    <Content Include="Images\icons_ext\32\file_extension_chm.png" />
+    <Content Include="Images\icons_ext\32\file_extension_dat.png" />
+    <Content Include="Images\icons_ext\32\file_extension_divx.png" />
+    <Content Include="Images\icons_ext\32\file_extension_dll.png" />
+    <Content Include="Images\icons_ext\32\file_extension_dmg.png" />
+    <Content Include="Images\icons_ext\32\file_extension_doc.png" />
+    <Content Include="Images\icons_ext\32\file_extension_dss.png" />
+    <Content Include="Images\icons_ext\32\file_extension_dvf.png" />
+    <Content Include="Images\icons_ext\32\file_extension_dwg.png" />
+    <Content Include="Images\icons_ext\32\file_extension_eml.png" />
+    <Content Include="Images\icons_ext\32\file_extension_eps.png" />
+    <Content Include="Images\icons_ext\32\file_extension_exe.png" />
+    <Content Include="Images\icons_ext\32\file_extension_fla.png" />
+    <Content Include="Images\icons_ext\32\file_extension_flv.png" />
+    <Content Include="Images\icons_ext\32\file_extension_gif.png" />
+    <Content Include="Images\icons_ext\32\file_extension_gz.png" />
+    <Content Include="Images\icons_ext\32\file_extension_hqx.png" />
+    <Content Include="Images\icons_ext\32\file_extension_htm.png" />
+    <Content Include="Images\icons_ext\32\file_extension_html.png" />
+    <Content Include="Images\icons_ext\32\file_extension_ifo.png" />
+    <Content Include="Images\icons_ext\32\file_extension_indd.png" />
+    <Content Include="Images\icons_ext\32\file_extension_iso.png" />
+    <Content Include="Images\icons_ext\32\file_extension_jar.png" />
+    <Content Include="Images\icons_ext\32\file_extension_jpeg.png" />
+    <Content Include="Images\icons_ext\32\file_extension_jpg.png" />
+    <Content Include="Images\icons_ext\32\file_extension_lnk.png" />
+    <Content Include="Images\icons_ext\32\file_extension_log.png" />
+    <Content Include="Images\icons_ext\32\file_extension_m4a.png" />
+    <Content Include="Images\icons_ext\32\file_extension_m4b.png" />
+    <Content Include="Images\icons_ext\32\file_extension_m4p.png" />
+    <Content Include="Images\icons_ext\32\file_extension_m4v.png" />
+    <Content Include="Images\icons_ext\32\file_extension_mcd.png" />
+    <Content Include="Images\icons_ext\32\file_extension_mdb.png" />
+    <Content Include="Images\icons_ext\32\file_extension_mid.png" />
+    <Content Include="Images\icons_ext\32\file_extension_mov.png" />
+    <Content Include="Images\icons_ext\32\file_extension_mp2.png" />
+    <Content Include="Images\icons_ext\32\file_extension_mp3.png" />
+    <Content Include="Images\icons_ext\32\file_extension_mp4.png" />
+    <Content Include="Images\icons_ext\32\file_extension_mpeg.png" />
+    <Content Include="Images\icons_ext\32\file_extension_mpg.png" />
+    <Content Include="Images\icons_ext\32\file_extension_msi.png" />
+    <Content Include="Images\icons_ext\32\file_extension_mswmm.png" />
+    <Content Include="Images\icons_ext\32\file_extension_new.png" />
+    <Content Include="Images\icons_ext\32\file_extension_ogg.png" />
+    <Content Include="Images\icons_ext\32\file_extension_pdf.png" />
+    <Content Include="Images\icons_ext\32\file_extension_png.png" />
+    <Content Include="Images\icons_ext\32\file_extension_pps.png" />
+    <Content Include="Images\icons_ext\32\file_extension_ps.png" />
+    <Content Include="Images\icons_ext\32\file_extension_psd.png" />
+    <Content Include="Images\icons_ext\32\file_extension_pst.png" />
+    <Content Include="Images\icons_ext\32\file_extension_ptb.png" />
+    <Content Include="Images\icons_ext\32\file_extension_pub.png" />
+    <Content Include="Images\icons_ext\32\file_extension_qbb.png" />
+    <Content Include="Images\icons_ext\32\file_extension_qbw.png" />
+    <Content Include="Images\icons_ext\32\file_extension_qxd.png" />
+    <Content Include="Images\icons_ext\32\file_extension_ram.png" />
+    <Content Include="Images\icons_ext\32\file_extension_rar.png" />
+    <Content Include="Images\icons_ext\32\file_extension_rm.png" />
+    <Content Include="Images\icons_ext\32\file_extension_rmvb.png" />
+    <Content Include="Images\icons_ext\32\file_extension_rtf.png" />
+    <Content Include="Images\icons_ext\32\file_extension_sea.png" />
+    <Content Include="Images\icons_ext\32\file_extension_ses.png" />
+    <Content Include="Images\icons_ext\32\file_extension_sit.png" />
+    <Content Include="Images\icons_ext\32\file_extension_sitx.png" />
+    <Content Include="Images\icons_ext\32\file_extension_ss.png" />
+    <Content Include="Images\icons_ext\32\file_extension_swf.png" />
+    <Content Include="Images\icons_ext\32\file_extension_tgz.png" />
+    <Content Include="Images\icons_ext\32\file_extension_thm.png" />
+    <Content Include="Images\icons_ext\32\file_extension_tif.png" />
+    <Content Include="Images\icons_ext\32\file_extension_tmp.png" />
+    <Content Include="Images\icons_ext\32\file_extension_torrent.png" />
+    <Content Include="Images\icons_ext\32\file_extension_ttf.png" />
+    <Content Include="Images\icons_ext\32\file_extension_txt.png" />
+    <Content Include="Images\icons_ext\32\file_extension_vcd.png" />
+    <Content Include="Images\icons_ext\32\file_extension_vob.png" />
+    <Content Include="Images\icons_ext\32\file_extension_wav.png" />
+    <Content Include="Images\icons_ext\32\file_extension_wma.png" />
+    <Content Include="Images\icons_ext\32\file_extension_wmv.png" />
+    <Content Include="Images\icons_ext\32\file_extension_wps.png" />
+    <Content Include="Images\icons_ext\32\file_extension_xls.png" />
+    <Content Include="Images\icons_ext\32\file_extension_xpi.png" />
+    <Content Include="Images\icons_ext\32\file_extension_zip.png" />
+    <Content Include="Images\icons_ext\32\folder_vertical_document.png" />
+    <Content Include="Images\icons_ext\32\folder_vertical_open.png" />
+    <Content Include="Images\imagen_relleno.jpg" />
+    <Content Include="Images\logo1_cfe_old.jpg" />
+    <Content Include="Images\logo2.jpg" />
+    <Content Include="Images\logocfe.png" />
+    <Content Include="Images\logo_cfe.png" />
+    <Content Include="Images\logo_cfe_original.png" />
+    <Content Include="Images\logo_cfe_transparente.png" />
+    <Content Include="Images\logo_zotgm.jpg" />
+    <Content Include="Images\portada.jpg" />
+    <Content Include="Images\portada.original.jpg" />
+    <Content Include="Images\presentacion\logo_cfe.png" />
+    <Content Include="Images\presentacion\logo_zotgm.jpg" />
+    <Content Include="Images\presentacion\portada.jpg" />
+    <Content Include="Protegido\About.aspx" />
+    <Content Include="Protegido\Configuracion\descripcion_archivos.xml" />
+    <Content Include="Protegido\Configuracion\descripcion_carpetas.xml" />
+    <Content Include="Protegido\Configuration.aspx" />
+    <Content Include="Protegido\Contenedor\archivos aqui.txt" />
+    <Content Include="Protegido\Contenido.aspx" />
+    <Content Include="Protegido\CuentasUsuarios.aspx" />
+    <Content Include="Protegido\Herramientas.aspx" />
+    <Content Include="Protegido\Scripts\Configuracion.js" />
+    <Content Include="Protegido\Scripts\Contenido.js" />
+    <Content Include="Protegido\Scripts\CuentasUsuarios.js" />
+    <Content Include="Scripts\colpick.js" />
+    <Content Include="Scripts\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\jquery-1.11.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.0.min.js" />
+    <Content Include="Scripts\jquery.tablesorter.min.js" />
+    <Content Include="Scripts\jquery.tablesorter.widgets.min.js" />
+    <Content Include="Scripts\waitMe.min.js" />
+    <Content Include="Styles\colpick.css" />
+    <Content Include="Styles\images\animated-overlay.gif" />
+    <Content Include="Styles\images\black-asc.gif" />
+    <Content Include="Styles\images\black-desc.gif" />
+    <Content Include="Styles\images\black-unsorted.gif" />
+    <Content Include="Styles\images\bootstrap-black-unsorted.png" />
+    <Content Include="Styles\images\bootstrap-white-unsorted.png" />
+    <Content Include="Styles\images\dropbox-asc-hovered.png" />
+    <Content Include="Styles\images\dropbox-asc.png" />
+    <Content Include="Styles\images\dropbox-desc-hovered.png" />
+    <Content Include="Styles\images\dropbox-desc.png" />
+    <Content Include="Styles\images\green-asc.gif" />
+    <Content Include="Styles\images\green-desc.gif" />
+    <Content Include="Styles\images\green-header.gif" />
+    <Content Include="Styles\images\green-unsorted.gif" />
+    <Content Include="Styles\images\ice-asc.gif" />
+    <Content Include="Styles\images\ice-desc.gif" />
+    <Content Include="Styles\images\ice-unsorted.gif" />
+    <Content Include="Styles\images\metro-black-asc.png" />
+    <Content Include="Styles\images\metro-black-desc.png" />
+    <Content Include="Styles\images\metro-loading.gif" />
+    <Content Include="Styles\images\metro-unsorted.png" />
+    <Content Include="Styles\images\metro-white-asc.png" />
+    <Content Include="Styles\images\metro-white-desc.png" />
+    <Content Include="Styles\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Styles\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Styles\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Styles\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Styles\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Styles\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Styles\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Styles\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Styles\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Styles\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Styles\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\images\white-asc.gif" />
+    <Content Include="Styles\images\white-desc.gif" />
+    <Content Include="Styles\images\white-unsorted.gif" />
+    <Content Include="Styles\jquery-ui-1.11.0.css" />
+    <Content Include="Styles\jquery-ui.structure-1.11.0.css" />
+    <Content Include="Styles\jquery-ui.theme-1.11.0.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Styles\theme.blue.css" />
+    <Content Include="Styles\waitMe.min.css" />
+    <Content Include="TreeLineImages\dash.gif" />
+    <Content Include="TreeLineImages\dashminus.gif" />
+    <Content Include="TreeLineImages\dashplus.gif" />
+    <Content Include="TreeLineImages\i.gif" />
+    <Content Include="TreeLineImages\l.gif" />
+    <Content Include="TreeLineImages\lminus.gif" />
+    <Content Include="TreeLineImages\lplus.gif" />
+    <Content Include="TreeLineImages\minus.gif" />
+    <Content Include="TreeLineImages\noexpand.gif" />
+    <Content Include="TreeLineImages\plus.gif" />
+    <Content Include="TreeLineImages\r.gif" />
+    <Content Include="TreeLineImages\rminus.gif" />
+    <Content Include="TreeLineImages\rplus.gif" />
+    <Content Include="TreeLineImages\t.gif" />
+    <Content Include="TreeLineImages\tminus.gif" />
+    <Content Include="TreeLineImages\tplus.gif" />
+    <None Include="Web.config.backup20210108" />
+    <None Include="Web.config.Debug.backup20210108">
+      <DependentUpon>Web.config.backup20210108</DependentUpon>
+    </None>
+    <None Include="Web.config.Release.backup20210108">
+      <DependentUpon>Web.config.backup20210108</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion.cs" />
+    <Compile Include="ControlDB.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DescripcionArchivosCarpetas.cs" />
+    <Compile Include="EmailSMTP.cs" />
+    <Compile Include="EnviarCorreo.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MedirTiempos.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protegido\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protegido\About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protegido\Configuration.aspx.cs">
+      <DependentUpon>Configuration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protegido\Configuration.aspx.designer.cs">
+      <DependentUpon>Configuration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protegido\Contenido.aspx.cs">
+      <DependentUpon>Contenido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protegido\Contenido.aspx.designer.cs">
+      <DependentUpon>Contenido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protegido\CuentasUsuarios.aspx.cs">
+      <DependentUpon>CuentasUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protegido\CuentasUsuarios.aspx.designer.cs">
+      <DependentUpon>CuentasUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Protegido\Herramientas.aspx.cs">
+      <DependentUpon>Herramientas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Protegido\Herramientas.aspx.designer.cs">
+      <DependentUpon>Herramientas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <None Include="Protegido\ArchivosImportadosExportados\UsuariosExportados.csv" />
+    <None Include="Protegido\ArchivosImportadosExportados\UsuariosImportados.csv" />
+    <Content Include="Protegido\web.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1332</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

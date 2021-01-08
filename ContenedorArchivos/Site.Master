@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ContenedorArchivos.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div class="page">
+        <div class="header">
+            <!--div class ="title" style="background-color: #000; float: left; width: 100%; " -->
+            
+                <asp:Panel ID="Panel_Titulo" runat="server" class="title" style="float: left; width: 100%; ">
+               
+                <div style="float: left; padding : 10px 0px 0px 5px; width: 220px; height: 100%; left: 0;">
+                    <img src="../Images/logo_cfe.png" style=" width: 220px;" alt="Logo de CFE" />
+                </div>
+                <div style="float: left; width: 570px; text-align: center; padding : 10px 0px 0px 0px;">
+                    <div><asp:Label ID="Label_Titulo1" runat="server" Text="Area" Font-Bold="True" Font-Size="18px"></asp:Label></div>
+                    <div><asp:Label ID="Label_Titulo2" runat="server" Text="Subarea" Font-Size="16px" Font-Bold="True" ></asp:Label></div>
+                   <div><asp:Label ID="Label_Titulo3" runat="server" Text="Nombre Aplicacion" Font-Size="16px" Font-Bold="True" ></asp:Label></div>
+                </div>
+                <div style="float: right; padding : 10px 0px 0px 5px;  width: 150px; text-align: right;">
+                
+                    <img src="../Images/logo2.jpg" style="width: 130px; " alt="Logo del Centro de Trabajo" />
+                </div>
+            
+             </asp:Panel>
+            
+     
+            <!--div style="color: #FFFFFF; text-align: center; padding: 10; background-color: #4B6C9E;">
+                
+            </div-->
+      
+             <!--div class="clear hideSkiplink"-->
+             <!--div class="clear hideSkiplink" style=" display: block; float: left; width: 500px; background-color: #DFDFDF; margin-bottom: 0px;" -->
+             <div style=" display: block; float: left; width: 100%; background-color: #DFDFDF; margin-bottom: 8px;">
+             <div  style=" display: block; float: left; width: 500px; background-color: #DFDFDF; margin-bottom: 0px;">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Protegido/Contenido.aspx" Text="Contenido" 
+                            Value="Contenido" />
+                        <asp:MenuItem Text="Administración" Value="Administración">
+                            <asp:MenuItem NavigateUrl="~/Protegido/CuentasUsuarios.aspx" Text="Cuentas de Usuario" 
+                                Value="Cuentas de Usuario"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Protegido/Configuration.aspx" Text="Configuración" 
+                                Value="Configuración"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Protegido/About.aspx" Text="Acerca de" 
+                            Value="Acerca de">
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+
+
+            <div class="loginDisplay" style=" color: #000000; background-color: #DFDFDF;">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">[Log In]</a> 
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Bienvenido <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>
+                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="[Salir]" LogoutPageUrl="~/" style=" color: #000000;"/> 
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="clear" >
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>

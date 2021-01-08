@@ -1,0 +1,11 @@
+Admin,admin*,Admin,,,,admin@centrotrabajo.gob.mx,False
+alejandro.mendoza,9dy8k,Admin,Alejandro,Mendoza,Mendoza,alejandro.mendoza01@cfe.gob.mx,True
+alvaro.tacuba,i0664,SuperUser,Alvaro,Tacuba,Mora,alvaro.tacuba@cfe.gob.mx,False
+andres.morales,9dy8l,User,Andres,Morales,Leon,andres.morales@cfe.gob.mx,False
+eduardo.viveros,9dy88,User,Eduardo,Viveros,Capote,eduardo.viveros@cfe.gob.mx,False
+jorge.ortiz,9dyap,SuperUser,Jorge,Ortiz,García,jorge.ortiz09@cfe.gob.mx,True
+salvador.navarrete,9dya0,User,Salvador,Navarrete,Navarrete,,False
+sergio.casillas,9arfw,User,Sergio,Casillas,Casillas,sergio.casillas@cfe.gob.mx,False
+SuperUser,superuser*,SuperUser,,,,superuser@centrotrabajo.gob.mx,False
+unifilaresgmo,unifilaresgmo,User,,,,,False
+User,user*,User,,,,user@centrotrabajo.gob.mx,False

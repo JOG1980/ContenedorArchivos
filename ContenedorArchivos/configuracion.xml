@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <graphic_interface>
+    <vista>
+      <vista_inicial>icons</vista_inicial>
+      <habilitar_mensaje_bienvenida>True</habilitar_mensaje_bienvenida>
+      <titulo_mensaje_bienvenida>INFORMACIÓN RESERVADA</titulo_mensaje_bienvenida>
+      <mensaje_bienvenida>Los presentes unifilares, así como la documentación que de ellos se genere, se clasifica como RESERVADA por parte del Titular de la Subdirección de Transmisión adscrita a la Dirección de Operación de la Comisión Federal de Electricidad, con fundamento en el Artículo 13 fracción I de la Ley Federal de Transparencia y Acceso a la Información Pública Gubernamental; Artículos 26 fracción I y II, y 30 del Reglamento de la Ley Federal de Transparencia y Acceso a la Información Pública Gubernamental, y artículos Cuarto, Quinto y Décimo Octavo, fracción V, inciso e de los Lineamientos Generales para la Clasificación y Desclasificación de la Información de las Dependencias y Entidades de la Administración Pública Federal.</mensaje_bienvenida>
+    </vista>
+    <email>
+      <servidor_smtp_ip>smtp_grtc.cfe.gob.mx</servidor_smtp_ip>
+      <habilitar_envio_email_aviso>True</habilitar_envio_email_aviso>
+      <email_remitente>zotgm@cfe.gob.mx</email_remitente>
+    </email>
+    <master_page>
+      <titulo1>Gerencia Regional de Transmisión Central</titulo1>
+      <titulo1_default>Gerencia Regional de Transmisión Central</titulo1_default>
+      <titulo1_color>#00A969</titulo1_color>
+      <titulo1_color_default>#00A969</titulo1_color_default>
+      <titulo1_tamano>16</titulo1_tamano>
+      <titulo1_tamano_default>16</titulo1_tamano_default>
+      <titulo2>Zona de Operación de Transmisión Guerrero Morelos</titulo2>
+      <titulo2_default>Zona de Operación de Transmisión Guerrero Morelos</titulo2_default>
+      <titulo2_color>#8DC63F</titulo2_color>
+      <titulo2_color_default>#8DC63F</titulo2_color_default>
+      <titulo2_tamano>14</titulo2_tamano>
+      <titulo2_tamano_default>14</titulo2_tamano_default>
+      <titulo3>Seguimiento de Contratos</titulo3>
+      <titulo3_default>Nombre de este Contenedor de Archivos</titulo3_default>
+      <titulo3_color>#FFFFFF</titulo3_color>
+      <titulo3_color_default>#FFFFFF</titulo3_color_default>
+      <titulo3_tamano>14</titulo3_tamano>
+      <titulo3_tamano_default>14</titulo3_tamano_default>
+      <titulo_fondo_color>#000000</titulo_fondo_color>
+      <titulo_fondo_color_default>#000000</titulo_fondo_color_default>
+      <imagen_logo1>logo_cfe.png</imagen_logo1>
+      <imagen_logo2>logo_zotgm.jpg</imagen_logo2>
+      <imagen_portada>portada.jpg</imagen_portada>
+    </master_page>
+    <acerca_de>
+      <version>1.16</version>
+      <fecha_compilacion>13 de Mayo del 2015</fecha_compilacion>
+    </acerca_de>
+  </graphic_interface>
+</configuration>
