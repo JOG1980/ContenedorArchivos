@@ -54,7 +54,9 @@
     <Content Include="Account\ChangePassword.aspx" />
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
-    <Content Include="configuracion.xml" />
+    <Content Include="configuracion.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Images\IconPack1\16x16\accept.png" />
     <Content Include="Images\IconPack1\16x16\add.png" />
     <Content Include="Images\IconPack1\16x16\add2.png" />
