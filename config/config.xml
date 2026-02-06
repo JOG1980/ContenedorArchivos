@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuracion_contenedor_archivos>
+    <titulos>
+        <titulo_pagina>Unifilares</titulo_pagina>
+        <titulo1>Gerencia Regional de Transmisión Central</titulo1>
+        <titulo2>Zona de Operación de Transmision Guerrero Morelos</titulo2>
+        <titulo3>Unifilares</titulo3>
+    </titulos>
+    <contenedor>
+        <ruta_base>__FCONTAINER__</ruta_base><!-- Ruta base (raiz) de donde se empiezan a contener todos los archivos -->
+    </contenedor>
+    <bd_sqlite>
+        <ruta_bd>basedatos/contenedorarchivos.db</ruta_bd>
+    </bd_sqlite>
+    <archivo_zip>
+        <nombre>unifilares</nombre>
+        <ext>zip</ext>
+        <agregar_fecha>1</agregar_fecha><!-- 0:NO , 1:SI -->
+    </archivo_zip>
+</configuracion_contenedor_archivos>

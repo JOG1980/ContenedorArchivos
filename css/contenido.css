@@ -1,0 +1,150 @@
+*/body {
+    font-size: 14px;
+       margin: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+#jstree_div .jstree-anchor {
+    /*font-size: 14px;*/
+}
+
+
+/*borders*/
+.my_barra_menu {
+    padding: 5px 5px 5px 5px;
+  border: 1px solid #71717B;
+  background-color: #F4F4F5;
+  border-radius: 5px;
+  /*margin-top: 5px;*/
+  margin-bottom: 10px;
+}
+
+/*botones*/
+.my_btn {
+    /*padding: .20rem .10rem .10rem .20rem;*/
+    padding: 2px 2px 2px 2px;
+   /* border:1px solid #bbbbbb;
+    margin: 2px 2px 2px 2px;*/
+  
+    border-radius: 5px;
+
+     color: #A1A1A1;        /* texto */
+  border-color: #A1A1A1; /* borde */
+  }
+
+
+.my_btn:hover {
+  background-color: #A1A1A1;
+  /*color: #D4D4D4;*/
+  color: yellow;
+}
+
+
+
+
+.jstree_contenedor > div {
+  padding: 10px 0px 10px 8px;
+  border: 1px solid #71717B;
+  background-color: #F4F4F5;
+  border-radius: 5px;
+   min-height: 700px;
+  max-height: 100vh;
+    overflow-y: auto; /* scroll si el contenido excede */
+}
+
+
+.contenedor_items{
+  /*border: 1px solid red;*/
+  /*padding: 20px 15px 20px 15px;*/
+    /*border: 1px solid #71717B;*/
+  /*background-color: #F4F4F5;*/
+  border-radius: 5px;
+  height:100%;
+}
+
+
+.contenedor_items_icons{
+  padding: 10px 15px 20px 15px;
+}
+
+.contenedor_items_details{
+  padding: 0px 15px 20px 15px;
+}
+
+
+.item_icon_view{
+  /*font-size: 14px;*/
+  /*border: 1px solid blue;*/
+  padding: 3px 2px 3px 2px;
+}
+/*.item_icon_view > a > i{
+  width: 50px;
+}*/
+
+/*tamaño de los iconos del jstree*/
+.jstree-icon {
+  width: 20px !important;
+  height: 20px !important;
+  background-size: contain !important;
+}
+
+.icon-lg {
+    font-size: 48px;
+}
+
+.icon-md {
+    font-size: 28px;
+}
+
+.icon-sm {
+    font-size: 18px;
+}
+
+.item_icon_detail > a > img{
+     width: 22px;
+}
+
+
+
+.contenedor_items th{
+  /*font-size: 16px;*/
+  /*border: 1px solid red;*/
+  padding: 3px 2px 3px 2px;
+}
+
+.contenedor_items th:nth-child(1){
+  width:20px;
+}
+.contenedor_items td:nth-child(2){
+  padding: 5px 0px 5px 0px;
+}
+.contenedor_items th:nth-child(3), td:nth-child(4){
+  width:200px;
+  text-align: right;
+  padding-right: 30px;
+}
+.contenedor_items th:nth-child(4),th:nth-child(5), td:nth-child(4), td:nth-child(5){
+  width:250px;
+  text-align:center;
+}
+
+
+
+#menu_contenedor {
+  position: fixed;        /* o absolute */
+  top: 0;
+  left: 0;
+  /*background: #333;*/
+  
+  background: #F4F4F5;
+  /*color: #fff;*/
+  color: #000;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  /*pointer-events: none;   /* importante: no bloquea el mouse */
+}
