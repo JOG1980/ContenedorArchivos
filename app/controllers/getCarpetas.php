@@ -24,25 +24,64 @@ if (empty($_POST['datos'])) {
 	exit;
 }
 
-if (empty($_SESSION['_RUTA_INICIAL_'])) {
+/*if (empty($_SESSION['_RUTA_INICIAL_'])) {
 	header("Location: login.php");
 	exit;
-}
+}*/
 
-require_once('./utils.php'); //incluye la variable de $config_data para la configuracion
+require_once CONFIG_PATH .'/Config.php'; //incluye la variable de $config_data para la configuracion
+$config_data = Config::load();
+
+
+//require_once('./utils.php'); //incluye la variable de $config_data para la configuracion
+
+
+
+function buscarCarpetas($ruta) {
+    $resultado = [];
+
+    if (!is_dir($ruta)) {
+        return $resultado;
+    }
+
+    $items = scandir($ruta);
+
+    foreach ($items as $item) {
+        if ($item === '.' || $item === '..') {
+            continue;
+        }
+
+        $rutaCompleta = $ruta . DIRECTORY_SEPARATOR . $item;
+
+        if (is_dir($rutaCompleta)) {
+            $resultado[] = [
+                "text" => $item,
+                //"icon" => "jstree-folder",
+                //"icon"=> "bi bi-folder-fill text-warning icon-sm",
+                "icon"=> "images/32x32/folder.png",
+                'ruta'   => $rutaCompleta,
+                "children" => buscarCarpetas($rutaCompleta)
+            ];
+        }
+    }
+
+    return $resultado;
+}
 
 
 
 
 //obtenemos la ruta a partiur de donde va a buscar los archivos y carpetas buscados
-$ruta_inicial = $_SESSION['_RUTA_INICIAL_'];
+$nivel_inicial = $_SESSION['nivel_inicial'];
 
 //Takes a JSON encoded string and converts it into a PHP variable.
 $datos = json_decode($_POST['datos']);
 
 //obtenemos datos de llegada
 //$ruta = 'container/'.$datos->ruta;
-$ruta = $_SESSION['_RUTA_INICIAL_'] . $datos->ruta;
+//$ruta = $_SESSION['_RUTA_INICIAL_'] . $datos->ruta;
+
+$ruta = ROOT_PATH .'/'. $config_data->contenedor_ruta_base . $nivel_inicial . $datos->ruta;
 
 $items = buscarCarpetas($ruta);
 

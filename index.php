@@ -29,13 +29,17 @@ else if($controller=='loginUser'){
 	    
         $username = $_POST['username'];
         $password = $_POST['password'];
-        //$username = $datos->username;
-        //$password = $datos->password;
         require_once CONTROLLER_PATH.'/loginController.php';
         $obj = new LoginController();
         $obj->validarUsuario($username, $password);
         exit;
     }
+}
+else if($controller=='getCarpetas'){
+
+    require_once CONTROLLER_PATH.'/getCarpetas.php';
+    exit;
+
 }
 
  require VIEW_PATH.'/login.php';

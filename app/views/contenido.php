@@ -30,9 +30,11 @@
 // $_SESSION['_RUTA_INICIAL_'] = $ruta_inicial;
 //se carga la variable $config_data con los datos de configuracion
 $config_data = Config::load();
+
 //$ruta_contenedor_ruta_base = $config->contenedor_ruta_base; //"__FCONTAINER__" definido en el xml
-$ruta_contenedor_ruta_base = $config_data->contenedor_ruta_base; //"__FCONTAINER__" definido en el xml
-$ruta_inicial = $ruta_contenedor_ruta_base . $_SESSION['nivel_inicial'];
+$contenedor_ruta_base = $config_data->contenedor_ruta_base; //"__FCONTAINER__" definido en el xml
+
+//$ruta_inicial = $contenedor_ruta_base . $_SESSION['nivel_inicial'];
 
 //busqueda de carpetas -----------------------------------------------
 //$carpetas = buscarCarpetas($ruta_contenedor );
@@ -65,7 +67,7 @@ $ruta_inicial = $ruta_contenedor_ruta_base . $_SESSION['nivel_inicial'];
 
 <body>
 
-    <input type="hidden" id="hd_ruta_contenedor_nivel_inicial" value='<?php echo $ruta_contenedor_nivel_inicial; ?>' /> <!-- Tiene la ruta base-->
+    <!--input type="hidden" id="hd_ruta_contenedor_nivel_inicial" value='< ?php echo $ruta_contenedor_nivel_inicial; ?>' /--> <!-- Tiene la ruta base-->
     <input type="hidden" id="hd_contenido_carpetas" value='<?php echo $carpetas_json; ?>' />
     <input type="hidden" id="hd_ruta_actual" value='' /> <!--contiene la ruta actual de la session, no la de todos los archivos del proyecto-->
     <input type="hidden" id="hd_vista_contenido" value='iconos' /> <!--almacena la vista seleccionada actualmente-->
