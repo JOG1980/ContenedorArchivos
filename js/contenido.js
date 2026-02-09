@@ -73,7 +73,7 @@ function cargarJSTree(ruta_actual) {
     type: "POST",
     //url: "/getCarpetas.php",
     //url: '/index.php?controller=usuario&action=guardar',
-    url: "?controller=getCarpetas",
+    url: "?controller=contenido&action=getCarpetas",
     async: false, // llamada de tipo asincrona
     cache: false,
     //data: $(this).serialize(),
@@ -178,7 +178,8 @@ function cargarContenido(ruta) {
   let obj_json = JSON.stringify(obj);
   $.ajax({
     type: "POST",
-    url: "./getContenido.php",
+    //url: "./getContenido.php",
+    url: "?controller=contenido&action=getContenido",
     async: true, // llamada de tipo asincrona
     cache: false,
     //data: $(this).serialize(),

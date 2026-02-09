@@ -5,7 +5,7 @@
 //Y LOS DATOS OBTENIDOS DEL USUARIO QUE TIENE ESTA IP
 
 
-session_start();
+//session_start();
 
 require_once CONFIG_PATH .'/Config.php'; //incluye la variable de $config_data para la configuracion
 //require_once('./utils.php'); //incluye la variable funcion de GetIPClient
