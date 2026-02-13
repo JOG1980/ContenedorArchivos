@@ -1,7 +1,7 @@
 <?php
 
-
-session_start();
+//session_start esta ya esta envocada en el index que requiere este archivo 
+//session_start();
 
 require_once CONFIG_PATH . '/Config.php'; //incluye la variable de $config_data para la configuracion
 
@@ -42,11 +42,11 @@ class ContenidoController
 
 
 
-    private static function buscarCarpetasArchivos($ruta_inicial, $ruta_relativa)
+    private static function buscarCarpetasArchivos($ruta_inicial, $ruta_busqueda)
     {
         $resultado = [];
 
-        $ruta = $ruta_inicial . $ruta_relativa;
+        $ruta = $ruta_inicial . $ruta_busqueda;
 
         if (!is_dir($ruta)) {
             return $resultado;
@@ -62,13 +62,16 @@ class ContenidoController
             //solo para los enlaces de los archivos
             //$rutaCompleta = $ruta . DIRECTORY_SEPARATOR . $item;
             $ruta_completa = $ruta . DIRECTORY_SEPARATOR . $item;
-            $ruta_relativa_completa = $ruta_relativa . DIRECTORY_SEPARATOR . $item;
+            $ruta_busqueda_completa = $ruta_busqueda . DIRECTORY_SEPARATOR . $item;
+
+
+
 
             if (is_dir($ruta_completa)) {
                 $resultado[] = [
                     "text" => $item,
                     "tipo" => "folder",
-                    'ruta'   => $ruta_relativa_completa
+                    'ruta'   => $ruta_busqueda_completa
                 ];
             } else {
                 $fecha_cre = date('Y-m-d H:i:s', filectime($ruta_completa));
@@ -85,7 +88,7 @@ class ContenidoController
                     "fecha_mod" => $fecha_mod,
                     "mime_type" => $mime_type,
                     'ruta_completa'   => $ruta_completa,
-                    'ruta'   => $ruta_relativa_completa,
+                    'ruta'   => $ruta_busqueda_completa,
 
                 ];
             }
@@ -100,9 +103,10 @@ class ContenidoController
         $config_data = Config::load();
 
 
-        $ruta_busqueda_absoluta = ROOT_PATH . '/' . $config_data->contenedor_ruta_base . $nivel_inicial;
+        //$ruta_busqueda_absoluta = ROOT_PATH . '/' . $config_data->contenedor_ruta_base . $nivel_inicial;
+        $ruta_busqueda_base = $config_data->contenedor_ruta_base . $nivel_inicial;
 
-        $items = self::buscarCarpetas($ruta_busqueda_absoluta);
+        $items = self::buscarCarpetas($ruta_busqueda_base);
 
 
         //oci_close($conn);
@@ -119,16 +123,21 @@ class ContenidoController
 
 
 
-    public static function getContenido($nivel_inicial, $ruta_relativa)
+    //public static function getContenido($nivel_inicial, $ruta_relativa)
+    public static function getContenido($nivel_inicial, $ruta_busqueda_actual)
     {
 
         $config_data = Config::load();
 
 
-       // $ruta_inicial = ROOT_PATH . '/' . $config_data->contenedor_ruta_base . $nivel_inicial . $datos->ruta;
+        // $ruta_inicial = ROOT_PATH . '/' . $config_data->contenedor_ruta_base . $nivel_inicial . $datos->ruta;
+
+        $ruta_busqueda_base = $config_data->contenedor_ruta_base . $nivel_inicial;
 
 
-        $items = buscarCarpetasArchivos($ruta_inicial, $ruta_relativa);
+        //$items = buscarCarpetasArchivos($ruta_inicial, $ruta_relativa);
+        $items = self::buscarCarpetasArchivos($ruta_busqueda_base, $ruta_busqueda_actual);
+
 
 
         $myObj = (object)[]; //creamosun objeto vacio			

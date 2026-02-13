@@ -5,7 +5,7 @@
 session_start();
 
 if (!defined('ROOT_PATH')) { //si la ruta raiz no esta definida, define todas las rutas requeridas
-    define('ROOT_PATH', __DIR__ );
+    define('ROOT_PATH', __DIR__);
     define('CONFIG_PATH', ROOT_PATH . '/config');
     define('APP_PATH', ROOT_PATH . '/app');
     define('VIEW_PATH', APP_PATH . '/views');
@@ -16,57 +16,61 @@ if (!defined('ROOT_PATH')) { //si la ruta raiz no esta definida, define todas la
 $controller = $_GET['controller'] ?? 'loginIP';
 $action = $_GET['action'] ?? '';
 
-if($controller=='loginIP'){
-    require_once CONTROLLER_PATH.'/LoginController.php';
+if ($controller == 'loginIP') {
+    require_once CONTROLLER_PATH . '/LoginController.php';
     $obj = new LoginController();
     $obj->validarIp();
     exit;
-}
-else if($controller=='loginUser'){
+} else if ($controller == 'loginUser') {
 
     // Existe y tiene valor
     if (!empty($_POST['username']) && !empty($_POST['password'])) {
-	
-	    
+
+
         $username = $_POST['username'];
         $password = $_POST['password'];
-        require_once CONTROLLER_PATH.'/LoginController.php';
+        require_once CONTROLLER_PATH . '/LoginController.php';
         $obj = new LoginController();
         $obj->validarUsuario($username, $password);
         exit;
     }
-}
-else if($controller=='contenido'){
+} else if ($controller == 'contenido') {
 
     //obtenemos la ruta a partiur de donde va a buscar los archivos y carpetas buscados
     $nivel_inicial = $_SESSION['nivel_inicial'];
 
-    //Takes a JSON encoded string and converts it into a PHP variable.
-    $datos = json_decode($_POST['datos']);
-    $ruta_busqueda = $datos->ruta;
-    require_once CONTROLLER_PATH.'/ContenidoController.php';
+    require_once CONTROLLER_PATH . '/ContenidoController.php';
 
-    
-    
-    if($action=='getCarpetas'){
-        //$ruta = ROOT_PATH .'/'. $config_data->contenedor_ruta_base . $nivel_inicial;
-
+    if ($action == 'getCarpetas') {
+        ContenidoController::getCarpetas($nivel_inicial);
+        exit;
+    } else if ($action == 'getContenido') {
+        //Takes a JSON encoded string and converts it into a PHP variable.
+        $datos = json_decode($_POST['datos']);
+        $ruta_busqueda = $datos->ruta;
+        ContenidoController::getContenido($nivel_inicial, $ruta_busqueda);
         //require_once CONTROLLER_PATH.'/getCarpetas.php';
-         ContenidoController::getCarpetas($nivel_inicial);
         exit;
     }
-    else if($action=='getContent'){
+} else if ($controller == 'downloadfiles') {
 
-    
-        //ContenidoController::getContedido($nivel_inicial,$ruta_relativa);
-        //require_once CONTROLLER_PATH.'/getCarpetas.php';
-        //exit;
-    } 
+    require_once CONTROLLER_PATH . '/DownloadFiles.php';
+    if ($action == 'generarZipFile') {
+        //obtenemos la ruta a partiur de donde va a buscar los archivos y carpetas buscados
+        $nivel_inicial = $_SESSION['nivel_inicial'];
+        $datos = json_decode($_POST['datos']);
+        $archivos = $datos->archivos;
 
+
+        DownloadFilesController::generateZipFiles($nivel_inicial, $archivos);
+        exit;
+    } else if ($action == 'downloadZipFile') {
+        $nombreZip =  $_GET['nombre_archivo_zip'];
+        DownloadFilesController::downloadZipFiles($nombreZip);
+        exit;
+    }
 }
 
- require VIEW_PATH.'/login.php';
+require VIEW_PATH . '/login.php';
 
 exit;
-
-?>

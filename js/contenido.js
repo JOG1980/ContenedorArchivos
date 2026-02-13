@@ -4,12 +4,11 @@ $(function () {
   initButtonsOn();
 
   // inicial
-  //inicializarFileInput();
 
   cargarContenido("");
 
-  initCanvasToDragAndDrop();
-  initMenuContenedor();
+  //initCanvasToDragAndDrop();
+  //initMenuContenedor();
   //ocultamos la animacion de carga
   loader(false);
 });
@@ -67,7 +66,7 @@ function initJSTree() {
 function cargarJSTree(ruta_actual) {
   loader(true);
   const obj = new Object();
-  obj.ruta = ruta_actual;
+  //obj.ruta = ruta_actual;
   let obj_json = JSON.stringify(obj);
   $.ajax({
     type: "POST",
@@ -140,17 +139,18 @@ function initDataTable() {
 }
 
 //--Cargar archivos de la ruta especificada --------------------------------------------------------
-function downloadFiles(rutas) {
+function downloadFiles(archivos) {
   const obj = new Object();
-  obj.rutas = rutas;
+  obj.archivos = archivos;
 
-  if (obj.rutas.length == 0) {
+  if (obj.archivos.length == 0) {
     alert("No hay archivos seleccionados.");
     return;
   }
   let obj_json = JSON.stringify(obj);
   $.ajax({
-    url: "./generateDownloadFiles.php",
+    //url: "./generateDownloadFiles.php",
+    url: "?controller=downloadfiles&action=generarZipFile",
     method: "POST",
     data: { datos: obj_json },
     success: function (data, status, xhr) {
@@ -160,9 +160,10 @@ function downloadFiles(rutas) {
       let file_exist = obj.file_exist;
 
       if (file_exist == "OK") {
-        console.log("Enviado correctamente");
+        //console.log("Enviado correctamente");
         window.location.href =
-          "downloadFiles.php?nombre_archivo_zip=" + nombre_archivo_zip;
+          "?controller=downloadfiles&action=downloadZipFile&nombre_archivo_zip=" +
+          nombre_archivo_zip;
       } else {
         alert("La generacion del archivo fallo");
       }
@@ -453,14 +454,14 @@ function initButtonsOn() {
 
   //boton vista detalles---------------------------------
   $(document).on("click", "#btn_download_file", function (event) {
-    let rutas = [];
+    let archivos = [];
     $('input[name^="checkbox_"]:checked').each(function () {
-      let ruta = $(this).parent().parent().find("div").attr("RUTA");
+      let archivo = $(this).parent().parent().find("div").attr("RUTA");
 
-      rutas.push(ruta); //agregamos en el arreglo la ruta cada checkbox seleccionado
+      archivos.push(archivo); //agregamos en el arreglo la ruta cada checkbox seleccionado
     });
 
-    downloadFiles(rutas);
+    downloadFiles(archivos);
   });
 
   //chbox de todos los checkbox ---------------------------
