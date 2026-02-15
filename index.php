@@ -47,29 +47,51 @@ if ($controller == 'loginIP') {
     } else if ($action == 'getContenido') {
         //Takes a JSON encoded string and converts it into a PHP variable.
         $datos = json_decode($_POST['datos']);
-        $ruta_busqueda = $datos->ruta;
+        $ruta_busqueda = $datos->ruta_busqueda;
         ContenidoController::getContenido($nivel_inicial, $ruta_busqueda);
         //require_once CONTROLLER_PATH.'/getCarpetas.php';
         exit;
     }
-} else if ($controller == 'downloadfiles') {
+} else if ($controller == 'downloadFiles') {
 
-    require_once CONTROLLER_PATH . '/DownloadFiles.php';
+    require_once CONTROLLER_PATH . '/DownloadFilesController.php';
     if ($action == 'generarZipFile') {
         //obtenemos la ruta a partiur de donde va a buscar los archivos y carpetas buscados
         $nivel_inicial = $_SESSION['nivel_inicial'];
         $datos = json_decode($_POST['datos']);
+        $ruta_busqueda = $datos->ruta_busqueda;
         $archivos = $datos->archivos;
 
 
-        DownloadFilesController::generateZipFiles($nivel_inicial, $archivos);
+        DownloadFilesController::generateZipFiles($nivel_inicial, $ruta_busqueda, $archivos);
         exit;
     } else if ($action == 'downloadZipFile') {
         $nombreZip =  $_GET['nombre_archivo_zip'];
         DownloadFilesController::downloadZipFiles($nombreZip);
         exit;
     }
+} else if ($controller == 'uploadFiles') {
+
+
+    if (!isset($_FILES['archivo'])) {
+        echo json_encode(['error' => 'No se recibió archivo']);
+        exit;
+    }
+
+    $nivel_inicial = $_SESSION['nivel_inicial'];
+    $archivo = $_FILES['archivo'];
+    $ruta_destino = $_POST['ruta_destino'];
+
+    if ($archivo['error'] !== UPLOAD_ERR_OK) {
+        echo json_encode(['error' => 'Error al subir archivo']);
+        exit;
+    }
+
+    require_once CONTROLLER_PATH . '/UploadFilesController.php';
+    UploadFilesController::uploadFiles($nivel_inicial, $ruta_destino, $archivo);
+    exit;
 }
+
 
 require VIEW_PATH . '/login.php';
 

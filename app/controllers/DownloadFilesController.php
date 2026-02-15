@@ -41,7 +41,7 @@ class DownloadFilesController
 
     //funcion para generar un archivo zip con los archivos seleccionados --------------------
     //public static function generateZipFiles($nivel_inicial, $ruta_busqueda, $archivos)
-    public static function generateZipFiles($nivel_inicial, $archivos)
+    public static function generateZipFiles($nivel_inicial, $ruta_busqueda, $archivos)
     {
 
 
@@ -52,7 +52,7 @@ class DownloadFilesController
         if (count($archivos) > 0) {
 
             $config_data = Config::load();
-            $ruta_busqueda_base = $config_data->contenedor_ruta_base . $nivel_inicial;
+            $ruta_busqueda_base = $config_data->contenedor_ruta_base . $nivel_inicial . $ruta_busqueda;
 
             //$nombreZip = 'archivos.zip';
             //$nombreZip = sys_get_temp_dir() . '\\archivos.zip';
@@ -77,7 +77,8 @@ class DownloadFilesController
             if ($zip->open($nombreZip, ZipArchive::CREATE | ZipArchive::OVERWRITE) === TRUE) {
 
                 foreach ($archivos as $archivo) {
-                    $ruta_completa_relativa =  $ruta_busqueda_base . $archivo;
+                    $ruta_completa_relativa =  $ruta_busqueda_base . '\\' . $archivo;
+
                     if (file_exists($ruta_completa_relativa)) {
                         self::buscarArchivosRecursivoParaZIP($zip, $ruta_completa_relativa, $archivo);
                     }

@@ -5,10 +5,10 @@ $(function () {
 
   // inicial
 
-  cargarContenido("");
+  cargarContenido("\\");
 
-  //initCanvasToDragAndDrop();
-  //initMenuContenedor();
+  initCanvasToDragAndDrop();
+  initMenuContenedor();
   //ocultamos la animacion de carga
   loader(false);
 });
@@ -49,11 +49,12 @@ function initJSTree() {
 
         // Llama a una función para construir la ruta
         //let ruta = 'contenido\\' + construirRutaJSTreePorNodeId(nodeId, data.instance);
-        let ruta = "\\" + construirRutaJSTreePorNodeId(nodeId, data.instance);
+        let ruta_busqueda =
+          "\\" + construirRutaJSTreePorNodeId(nodeId, data.instance);
 
-        $("#hd_ruta_actual").val(ruta);
+        $("#hd_ruta_actual").val(ruta_busqueda);
         //console.log("Ruta generada:", ruta);
-        cargarContenido(ruta);
+        cargarContenido(ruta_busqueda);
       }
     });
 
@@ -140,17 +141,19 @@ function initDataTable() {
 
 //--Cargar archivos de la ruta especificada --------------------------------------------------------
 function downloadFiles(archivos) {
-  const obj = new Object();
-  obj.archivos = archivos;
-
-  if (obj.archivos.length == 0) {
+  if (archivos.length == 0) {
     alert("No hay archivos seleccionados.");
     return;
   }
+
+  const obj = new Object();
+  obj.archivos = archivos;
+  obj.ruta_busqueda = $("#hd_ruta_actual").val(); //guardamos la ruta de archivos seleccionada
+
   let obj_json = JSON.stringify(obj);
   $.ajax({
     //url: "./generateDownloadFiles.php",
-    url: "?controller=downloadfiles&action=generarZipFile",
+    url: "?controller=downloadFiles&action=generarZipFile",
     method: "POST",
     data: { datos: obj_json },
     success: function (data, status, xhr) {
@@ -162,7 +165,7 @@ function downloadFiles(archivos) {
       if (file_exist == "OK") {
         //console.log("Enviado correctamente");
         window.location.href =
-          "?controller=downloadfiles&action=downloadZipFile&nombre_archivo_zip=" +
+          "?controller=downloadFiles&action=downloadZipFile&nombre_archivo_zip=" +
           nombre_archivo_zip;
       } else {
         alert("La generacion del archivo fallo");
@@ -172,10 +175,12 @@ function downloadFiles(archivos) {
 } //end
 
 //--Cargar archivos de la ruta especificada --------------------------------------------------------
-function cargarContenido(ruta) {
+function cargarContenido(ruta_busqueda) {
   loader(true);
+  $("#hd_ruta_actual").val(ruta_busqueda); //guardamos la ruta de archivos seleccionada
+
   const obj = new Object();
-  obj.ruta = ruta;
+  obj.ruta_busqueda = ruta_busqueda;
   let obj_json = JSON.stringify(obj);
   $.ajax({
     type: "POST",
@@ -230,10 +235,10 @@ function armarResultadosContenidoIconos(contenedor_items, items) {
   let contador = 1;
   for (i = 0; i < items.length; i++) {
     //let id = items[i].id;
-    let text = items[i].text;
+    let nombre = items[i].nombre;
     let tipo = items[i].tipo;
 
-    let ruta = items[i].ruta;
+    //let nombre = items[i].nombre;
     let ruta_completa = items[i].ruta_completa;
     //ruta = ruta.replace("\\", "/");
     if (contador == 1) {
@@ -248,8 +253,8 @@ function armarResultadosContenidoIconos(contenedor_items, items) {
       let image_name = "file_extension_" + ext + ".png";
       contenido_items +=
         " <div class='col-3'>" +
-        "<div class='item_icon_view' style='display: inline-block;' RUTA='" +
-        ruta +
+        "<div class='item_icon_view' style='display: inline-block;' nombre='" +
+        nombre +
         "' tipo='file' >" +
         "<a href='" +
         ruta_completa +
@@ -257,18 +262,18 @@ function armarResultadosContenidoIconos(contenedor_items, items) {
         "<img src='./images/32x32/" +
         image_name +
         "' />" +
-        text +
+        nombre +
         "</a></div>" +
         "</div>";
     } else {
       contenido_items +=
         " <div class='col-3'>" +
-        "<div class='item_icon_view mostrarContenidoCarpeta' style='display: inline-block;' RUTA='" +
-        ruta +
+        "<div class='item_icon_view mostrarContenidoCarpeta' style='display: inline-block;' nombre='" +
+        nombre +
         "' tipo='folder' >" +
         "<a href='#'>" +
         "<img src='./images/32x32/folder.png' />" +
-        text +
+        nombre +
         "</a></div>" +
         "</div>";
     }
@@ -291,10 +296,10 @@ function armarResultadosContenidoDetalles(contenedor_items, items) {
   let contador = 1;
   for (i = 0; i < items.length; i++) {
     //let id = items[i].id;
-    let text = items[i].text;
+    let nombre = items[i].nombre;
     let tipo = items[i].tipo;
 
-    let ruta = items[i].ruta;
+    //let nombre = items[i].nombre;
     let ruta_completa = items[i].ruta_completa;
 
     if (tipo == "file") {
@@ -309,8 +314,8 @@ function armarResultadosContenidoDetalles(contenedor_items, items) {
         contador +
         "'></td>" +
         "<td>" +
-        "<div class='item_icon_detail' style='display: fit-content;' RUTA='" +
-        ruta +
+        "<div class='item_icon_detail' style='display: fit-content;' nombre='" +
+        nombre +
         "' tipo='file'>" +
         "<a href='" +
         ruta_completa +
@@ -318,7 +323,7 @@ function armarResultadosContenidoDetalles(contenedor_items, items) {
         "<img src='./images/32x32/" +
         image_name +
         "' />" +
-        text +
+        nombre +
         "</a>" +
         "</div></td>" +
         "<td>" +
@@ -340,12 +345,12 @@ function armarResultadosContenidoDetalles(contenedor_items, items) {
         contador +
         "'></td>" +
         "<td>" +
-        "<div class='item_icon_detail mostrarContenidoCarpeta' style='display: inline-block;' RUTA='" +
-        ruta +
+        "<div class='item_icon_detail mostrarContenidoCarpeta' style='display: inline-block;' nombre='" +
+        nombre +
         "' tipo='folder'>" +
         "<a href='#'>" +
         "<img src='./images/32x32/folder.png' />" +
-        text +
+        nombre +
         "</a>" +
         "</div></td>" +
         "<td>&nbsp;</td>" +
@@ -378,24 +383,27 @@ function actualizarElementoArbolPorSeleccion(texto) {
 //por ejemplo cuando se generan nuevos elementos de botones y se necesita ligar un evento
 
 function initButtonsOn() {
+  //esta funcion carga el contenido de una carpeta del div principal -----
   $(document).on("click", ".mostrarContenidoCarpeta", function () {
-    let ruta_folder = $(this).attr("RUTA");
+    let nombre_folder = $(this).attr("nombre");
     //let tree_id = $(this).attr('TREE_ID');
-    $("#hd_ruta_actual").val(ruta_folder); //guardamos la ruta de archivos seleccionada
-    actualizarElementoArbolPorSeleccion(ruta_folder);
-    cargarContenido(ruta_folder);
+    let ruta_actual = $("#hd_ruta_actual").val();
+    let ruta_busqueda = ruta_actual + "\\" + nombre_folder;
+    actualizarElementoArbolPorSeleccion(nombre_folder);
+    //cargamos el nuevo contenido
+    cargarContenido(ruta_busqueda);
   });
 
-  $(document).on("click", "#btn_cargar_carpetas", function () {
-    let rura_carpeta_contenedor = $("#hd_ruta_contenedor").val();
+  // $(document).on("click", "#btn_cargar_carpetas", function () {
+  //   let rura_carpeta_contenedor = $("#hd_ruta_contenedor").val();
 
-    cargarArbolCarpetas(rura_carpeta_contenedor);
-  });
+  //   cargarArbolCarpetas(rura_carpeta_contenedor);
+  // });
 
   //boton inicio --------
   $(document).on("click", "#btn_home_file", function (event) {
     $("#hd_ruta_actual").val("");
-    cargarContenido("");
+    cargarContenido("\\");
     $("#jstree").jstree(true).close_all();
     $("#jstree").jstree(true).deselect_all(); //deseleccionamos todos los nodos del arbol
   });
@@ -424,15 +432,15 @@ function initButtonsOn() {
   //boton vista icono-----
   $(document).on("click", "#btn_view_icons", function (event) {
     $("#hd_vista_contenido").val("iconos");
-    let ruta_folder = $("#hd_ruta_actual").val();
-    cargarContenido(ruta_folder);
+    let ruta_busqueda = $("#hd_ruta_actual").val();
+    cargarContenido(ruta_busqueda);
   });
 
   //boton vista detalles-----
   $(document).on("click", "#btn_view_details", function (event) {
     $("#hd_vista_contenido").val("detalles");
-    let ruta_folder = $("#hd_ruta_actual").val();
-    cargarContenido(ruta_folder);
+    let ruta_busqueda = $("#hd_ruta_actual").val();
+    cargarContenido(ruta_busqueda);
   });
 
   //subir de nivel-----
@@ -456,7 +464,7 @@ function initButtonsOn() {
   $(document).on("click", "#btn_download_file", function (event) {
     let archivos = [];
     $('input[name^="checkbox_"]:checked').each(function () {
-      let archivo = $(this).parent().parent().find("div").attr("RUTA");
+      let archivo = $(this).parent().parent().find("div").attr("nombre");
 
       archivos.push(archivo); //agregamos en el arreglo la ruta cada checkbox seleccionado
     });
@@ -557,6 +565,10 @@ function initCanvasToDragAndDrop() {
       if (!archivo) return;
       enviarArchivoServidor(archivo);
     }
+
+    //recargamos la vista
+    let ruta_busqueda = $("#hd_ruta_actual").val();
+    cargarContenido(ruta_busqueda);
   });
 }
 
@@ -567,10 +579,15 @@ function enviarArchivoServidor(archivo) {
     return;
   }
 
+  ruta_destino = $("#hd_ruta_actual").val(); //guardamos la ruta de archivos seleccionada
+
   const formData = new FormData();
   formData.append("archivo", archivo);
+  formData.append("ruta_destino", ruta_destino);
 
-  fetch("upload.php", {
+  //fetch("upload.php", {
+  //"?controller=downloadfiles&action=downloadZipFile&nombre_archivo_zip=" +
+  fetch("?controller=uploadFiles", {
     method: "POST",
     body: formData,
   })
@@ -625,7 +642,7 @@ function initMenuContenedor() {
     "#contenedor_items, .item_icon_view, .item_icon_detail",
     function (e) {
       e.preventDefault(); // evita el menú contextual del navegador
-      //alert("Clic derecho detectado item"+ $(this).attr('RUTA'));
+      //alert("Clic derecho detectado item"+ $(this).attr('nombre'));
       let tipo = $(this).attr("tipo");
       menu_contenedor.style.left = e.clientX + "px";
       menu_contenedor.style.top = e.clientY + "px";
